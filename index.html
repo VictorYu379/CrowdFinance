@@ -8,7 +8,10 @@
     <script>
         // Function to check if the device is mobile
         function isMobile() {
-            return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone|Opera Mini|IEMobile/i.test(navigator.userAgent);
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Match iPhone, iPod, iPad, and Android
+            return /iPhone|iPad|iPod|Android/i.test(userAgent);
         }
 
         window.onload = function () {
