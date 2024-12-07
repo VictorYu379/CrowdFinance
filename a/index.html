@@ -45,7 +45,10 @@
             </ul>
 
             <!-- Clickable Button -->
-            <a href="#" class="cta-button" id="cta-button">Sign me up!</a>
+            <a href="#" class="cta-button" id="cta-button" onclick="gtag('event', 'link_click', { 
+                'event_category': 'engagement', 
+                'event_label': 'Version A Button'
+            });">Sign me up!</a>
         </div>
 
         <!-- Right Section with Two Overlapping Images -->
