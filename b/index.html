@@ -50,10 +50,7 @@
             </ul>
 
             <!-- Clickable Button -->
-            <a href="#" class="cta-button" id="cta-button" onclick="gtag('event', 'link_click', { 
-                'event_category': 'engagement', 
-                'event_label': 'Version B Button'
-            });">Sign me up!</a>
+            <a href="#" class="cta-button" id="cta-button">Sign me up!</a>
         </div>
 
         <!-- Right Section with Two Overlapping Images -->
@@ -66,9 +63,21 @@
     </div>
 
     <script>
-        // JavaScript for button click (optional)
-        document.getElementById('cta-button').addEventListener('click', () => {
-            alert('Button clicked! You can link this to a signup page.');
+        // Add event listener to the button
+        document.getElementById('cta-button').addEventListener('click', (event) => {
+            // Prevent default anchor navigation
+            event.preventDefault();
+
+            // Send event to Google Analytics
+            gtag('event', 'link_click', {
+                'event_category': 'engagement',
+                'event_label': 'Version B Button'
+            });
+
+            // Redirect to another URL after a short delay
+            setTimeout(() => {
+                window.location.href = 'https://forms.gle/i61Dib68PKe8bqjc6';
+            }, 200);
         });
     </script>
 </body>
