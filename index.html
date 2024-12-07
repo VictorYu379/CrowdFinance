@@ -6,7 +6,19 @@
     <meta charset="UTF-8">
     <title>Random Redirect</title>
     <script>
+        // Function to check if the device is mobile
+        function isMobile() {
+            return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone|Opera Mini|IEMobile/i.test(navigator.userAgent);
+        }
+
         window.onload = function () {
+            // Check if the visitor is using a mobile device
+            if (isMobile()) {
+                // Redirect to the mobile version
+                window.location.href = "mobile-a/index.html";
+                return; // Exit further logic
+            }
+
             // Generate a random number between 0 and 1
             var rand = Math.random();
             // 50% chance to redirect to index_a.html or index_b.html
